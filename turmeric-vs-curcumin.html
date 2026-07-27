@@ -37,6 +37,15 @@ header.site{background:#FFFFFF;border-bottom:1px solid #EAE6DA;position:sticky;t
 nav.main{display:flex;align-items:center;gap:26px;font-weight:700;font-size:14px;}
 nav.main a{color:var(--ink);}
 nav.main a:hover{color:var(--green-600);}
+/* Dropdown submenus */
+nav.main .has-sub{position:relative;display:flex;align-items:center;padding-bottom:16px;margin-bottom:-16px;}
+nav.main .has-sub > a::after{content:"";display:inline-block;margin-left:7px;vertical-align:middle;border:4px solid transparent;border-top-color:currentColor;transform:translateY(2px);}
+nav.main .subnav{position:absolute;top:100%;left:0;min-width:250px;background:#FFFFFF;border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 30px rgba(31,92,45,0.14);padding:8px;display:none;flex-direction:column;gap:2px;z-index:50;}
+nav.main .subnav-right{left:auto;right:0;}
+nav.main .has-sub:hover .subnav,nav.main .has-sub:focus-within .subnav{display:flex;}
+nav.main .subnav a{display:block;font-size:13.5px;font-weight:700;color:var(--ink);padding:10px 12px;border-radius:8px;letter-spacing:0;text-transform:none;white-space:nowrap;}
+nav.main .subnav a:hover{background:var(--cream);color:var(--green-600);}
+
 .btn-gold{background:var(--gold-600);color:#1B2A1E;padding:10px 20px;border-radius:999px;font-weight:800;display:inline-block;}
 .btn-gold:hover{background:#D99C12;color:#1B2A1E;}
 .btn-outline-green{border:2px solid var(--green-600);color:var(--green-600);padding:12px 26px;border-radius:999px;font-weight:700;display:inline-block;}
@@ -145,6 +154,8 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
   .utility-inner{flex-direction:column;text-align:center;padding:12px 16px;gap:10px;}
   .utility-group{justify-content:center;gap:16px;}
   .desktop-link{display:none;}
+  nav.main .subnav{display:none !important;}
+  nav.main .has-sub{padding-bottom:0;margin-bottom:0;}
   .nav{padding:12px 16px;}
   header.site{position:static;}
   .shell{padding:0 16px;}
@@ -194,8 +205,21 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
       <a class="desktop-link" href="../three-springs-farm-new-layout/index.html#benefits">BENEFITS</a>
       <a class="desktop-link" href="faqs.html">FAQ</a>
       <a class="desktop-link" href="../three-springs-farm-new-layout/index.html#about">ABOUT</a>
-      <a class="desktop-link" href="../three-springs-farm-new-layout/index.html#buy">STOCKISTS</a>
-      <a class="btn-gold" href="../three-springs-farm-new-layout/index.html#buy">BUY ONLINE</a>
+      <a class="desktop-link" href="https://threespringsfarm.com.au/stockists/">BUY IN STORE</a>
+      <div class="desktop-link has-sub">
+        <a href="https://threespringsfarm.com.au/contact/">CONTACT US</a>
+        <div class="subnav">
+          <a href="https://threespringsfarm.com.au/contact/">Contact Us</a>
+          <a href="https://threespringsfarm.com.au/contact/wholesale-enquiries/">Wholesale Enquiries</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a class="btn-gold" href="https://threespringsfarm.com.au/buy-now/">BUY ONLINE</a>
+        <div class="subnav subnav-right">
+          <a href="https://threespringsfarm.com.au/buy-now/">Buy Online</a>
+          <a href="https://threespringsfarm.com.au/buy-now/?add-to-cart=1598">Subscription</a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -206,11 +230,11 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
     <div class="breadcrumb"><a href="../three-springs-farm-new-layout/index.html">Home</a> &rsaquo; <a href="../three-springs-farm-new-layout/index.html#benefits">Complete 3 Turmeric™</a> &rsaquo; Turmeric vs Curcumin</div>
     <span class="eyebrow">Turmeric explained</span>
     <h1>Turmeric vs Curcumin: Absorption, Black Pepper and Full Spectrum Extracts Explained</h1>
-    <p class="standfirst">Curcumin and turmeric are not the same thing, though the two words are used interchangeably in marketing. Understanding the difference explains why some products need black pepper, fats or concentrates added, and why others do not.</p>
+    <p class="standfirst">Turmeric and curcumin are not the same thing, though you would never know it from the labels. Understanding the difference explains why so many supplements need black pepper, fats or concentrates added, and why ours does not.</p>
     <div class="meta">
-      <span>Written by Three Springs Farm</span>
+      <span>Written by Benita &amp; Phil, Three Springs Farm</span>
       <span>·</span>
-      <span>10 minute read</span>
+      <span>8 minute read</span>
     </div>
   </div>
 </section>
@@ -222,54 +246,56 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
 
     <!-- TLDR -->
     <div class="tldr">
-      <h2>The argument in five lines</h2>
+      <h2>The short of it</h2>
       <ul>
-        <li>Curcumin is about 5% of turmeric, not a synonym for it.</li>
-        <li>Isolated curcumin is cleared by the liver quickly, so it absorbs poorly.</li>
-        <li>Black pepper, fats and concentrates are workarounds for that problem.</li>
-        <li>Piperine's effect is unpredictable and inhibits a useful liver process.</li>
-        <li>Whole turmeric arrives with its own turmerones, so the problem does not arise.</li>
+        <li>Curcumin is about 5% of turmeric. It is one part of the plant, not another name for it.</li>
+        <li>On its own, curcumin is cleared by the liver quickly, so it absorbs poorly.</li>
+        <li>Black pepper, added fats and curcumin concentrates all exist to patch that problem.</li>
+        <li>Piperine's effect is unpredictable, and it switches off a liver process you want working.</li>
+        <li>Whole turmeric arrives with its own oils already in place, so the problem never begins.</li>
       </ul>
     </div>
 
     <h2 id="not-the-same">Curcumin is not another name for turmeric</h2>
-    <p>Curcumin is one of turmeric's natural active compounds, making up about <strong>5% of the total rhizome</strong>. It can be separated from turmeric, and it can also be manufactured synthetically from non-plant material.</p>
-    <p>The distinction between 'curcumin' and 'turmeric' has become blurred, and the two terms are frequently used interchangeably in the media and in marketing campaigns. The difference matters, because turmeric contains more than 100 active compounds. Curcumin is the most studied of them, but it is not the only one doing useful work.</p>
+    <p>Turmeric is one of nature's most complex healing plants. Beneath its golden colour lies a living network of active compounds, working together in quiet harmony. This is how turmeric has supported human health for thousands of years. Whole. Balanced. Intact.</p>
+    <p>Curcumin is one part of that network. It makes up about <strong>5% of the rhizome</strong>. It can be separated out from the plant, and it can also be manufactured synthetically from non-plant material.</p>
+    <p>Somewhere along the way, the words 'curcumin' and 'turmeric' became interchangeable in the media and on supplement labels. They are not. Turmeric holds more than 100 active compounds, and curcumin, while the most studied of them, is far from the only one doing useful work.</p>
     <div class="keypoint">
-      <p><strong>The short version:</strong> curcumin is a component of turmeric, in the way that caffeine is a component of coffee. A curcumin product and a turmeric product are not the same thing, and they do not behave the same way in the body.</p>
+      <p><strong>Put simply:</strong> curcumin is a component of turmeric, in the way that caffeine is a component of coffee. A curcumin product and a turmeric product are not the same thing, and they do not behave the same way in the body.</p>
     </div>
-    <p>Turmeric's other actives include a group of natural oils called <strong>turmerones</strong>. These matter a great deal to the absorption question, as the rest of this article explains. Recent research has highlighted the role of turmeric's bioactives beyond curcumin, which points toward using whole turmeric extract rather than curcumin alone.</p>
+    <p>Among those other compounds is a group of natural oils called <strong>turmerones</strong>. Hold on to that word. It turns out to matter a great deal to everything that follows.</p>
 
     <h2 id="absorption">Why is curcumin poorly absorbed?</h2>
-    <p>Isolated curcumin has a well-documented absorption problem. It is <strong>rapidly metabolised and excreted by a liver-induced process</strong>, which limits the amount of time it remains available for the body to absorb.</p>
-    <p>This single fact drives most of the formulation decisions you see on supplement labels. If you build a product around isolated curcumin, you inherit its absorption problem, and you then have to solve that problem with something else in the bottle. That "something else" is usually black pepper, added fats, or a curcumin concentrate.</p>
+    <p>Isolated curcumin has a well-documented problem: the body does not hold on to it. It is <strong>rapidly metabolised and excreted by a liver-induced process</strong>, which limits how long it stays available to absorb.</p>
+    <p>That single fact explains most of what you see on supplement labels today. Build a product around isolated curcumin and you inherit its absorption problem, which then has to be solved with something else in the bottle. That something else is usually black pepper, added fats, or a curcumin concentrate.</p>
 
-    <h2 id="black-pepper">How does black pepper help curcumin absorption?</h2>
-    <p>Black pepper releases a natural oil called <strong>piperine</strong>. Piperine inhibits the liver's metabolic process described above, temporarily slowing the rate at which curcumin is cleared, and thereby increasing curcumin's bioavailability.</p>
-    <p>That mechanism is real, but it comes with an important limitation: black pepper may only assist curcumin bioavailability <strong>when curcumin is isolated on its own</strong>. It does not offer the same benefit when curcumin is part of a whole turmeric extract, because a whole extract already carries its own absorption support.</p>
+    <h2 id="black-pepper">What black pepper actually does</h2>
+    <p>Black pepper releases a natural oil called <strong>piperine</strong>. Piperine slows the liver process described above, which keeps curcumin in circulation for longer and lifts its bioavailability.</p>
+    <p>The mechanism is real. But it comes with a catch that rarely makes it onto the packaging: black pepper only assists curcumin <strong>when curcumin is isolated on its own</strong>. Add it to a whole turmeric extract and there is nothing left for it to fix, because the plant already brought its own support along.</p>
 
-    <h2 id="conjecture">Why is there some conjecture over the use of black pepper?</h2>
-    <p>There are two practical concerns.</p>
-    <p><strong>First, the rate of absorption is unpredictable.</strong> It depends on how much curcumin is present in the digestive system at the same moment that the ambient temperature is sufficient to trigger piperine's release. Those two conditions do not reliably coincide.</p>
-    <p><strong>Second, there is a trade-off in switching off a liver process.</strong> The same metabolic pathway that clears curcumin also helps the body handle toxins, pollutants and drugs. Temporarily inhibiting it may compromise that defence. Black pepper also has a tendency to irritate the stomach.</p>
+    <h2 id="conjecture">Why there is conjecture over black pepper</h2>
+    <p>Two practical concerns, both worth knowing.</p>
+    <p><strong>The timing is unpredictable.</strong> Piperine has to be released at the same moment enough curcumin is present in the digestive system. Those two conditions do not reliably line up, so the absorption benefit varies from dose to dose.</p>
+    <p><strong>Switching off a liver process has a cost.</strong> The same pathway that clears curcumin also helps your body handle toxins, pollutants and medications. Temporarily inhibiting it may compromise that defence. Black pepper also has a tendency to irritate the stomach.</p>
     <div class="keypoint">
-      <p>None of this makes black pepper harmful in ordinary culinary amounts. The question is whether adding piperine to a supplement is the best available way to solve an absorption problem that a full spectrum extract does not have in the first place.</p>
+      <p>None of this makes black pepper a villain. It is a wonderful thing on your dinner. The question is whether adding piperine to a supplement is the best way to solve an absorption problem that a full spectrum extract does not have in the first place.</p>
     </div>
 
     <h2 id="concentrates">What is a curcumin concentrate?</h2>
-    <p>A curcumin concentrate is a patented product, either extracted from natural turmeric or synthesised from non-plant material. Concentrates are used to boost curcumin to a <strong>standardised level</strong> in capsules, tablets or liquids, so that every batch declares the same number on the label.</p>
-    <p>A consistent number is commercially useful. It is not the same thing as a product that reflects how the compounds occur in the plant.</p>
+    <p>A curcumin concentrate is a patented product, either extracted from natural turmeric or synthesised from non-plant material. Concentrates are used to lift curcumin to a <strong>standardised level</strong> in capsules, tablets or liquids, so every batch can declare the same number on the label.</p>
+    <p>An identical number is commercially useful. It is not the same thing as a product that reflects how the compounds actually occur in the plant.</p>
 
-    <h2 id="fats">How do fats and oils aid curcumin absorption?</h2>
-    <p>Fats and oils act as carriers for curcumin and extend the time it remains in circulation. This is why some formulations add oils, and why the traditional advice is to take turmeric with food.</p>
-    <p>There is an irony here that is easy to miss: <strong>extract of whole turmeric already contains its own natural oils</strong> that enhance curcumin absorption. The turmerones that get stripped out when curcumin is isolated are the same class of compounds that formulators then add back in another form.</p>
+    <h2 id="fats">How fats and oils aid absorption</h2>
+    <p>Fats and oils act as carriers for curcumin and extend the time it stays in circulation. This is why some formulations add oils, and why the old advice to take turmeric with food has always been sound.</p>
+    <p>Here is the part we find quietly remarkable. <strong>Whole turmeric already contains its own natural oils</strong> that do exactly this job. The turmerones stripped out when curcumin is isolated are the same class of compounds that formulators then add back in another form.</p>
 
-    <h2 id="why-added">So why are curcumin concentrates, black pepper and fats added at all?</h2>
-    <p>They are added to offset the low level of absorption of curcumin by the human body.</p>
-    <p>That is the entire reason. Each additive is a workaround for a problem created upstream, when curcumin was separated from the plant that came with its own absorption support. A product made from the whole fresh rhizome does not need to solve that problem, because it never introduces it.</p>
+    <h2 id="why-added">So why are these things added at all?</h2>
+    <p>They are added to offset the low absorption of curcumin by the human body. That is the whole reason.</p>
+    <p>Each additive is a patch for a problem created upstream, at the moment curcumin was separated from the plant that came with its own support system. An extract made from the whole fresh rhizome never has to solve that problem, because it never creates it.</p>
+    <p>No synthetics. No isolates. No artificial enhancers.</p>
 
     <h2 id="spectrum">Standardised vs full spectrum extracts</h2>
-    <p>This is the distinction that sits underneath everything above.</p>
+    <p>This is the distinction sitting underneath everything above.</p>
     <div class="table-wrap">
       <table class="compare">
         <thead>
@@ -284,12 +310,12 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
           <tr>
             <td>Consistency</td>
             <td>Identical declared curcumin figure batch to batch</td>
-            <td>Natural variation, reflecting the harvest</td>
+            <td>Natural variation, shaped by each harvest</td>
           </tr>
           <tr>
             <td>Usual additives</td>
             <td>Often black pepper, fats or curcumin concentrates to offset absorption</td>
-            <td>None required; turmeric's own turmerones support absorption</td>
+            <td>None required. Turmeric's own turmerones do the work</td>
           </tr>
           <tr>
             <td>Typical raw material</td>
@@ -299,11 +325,19 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
         </tbody>
       </table>
     </div>
-    <p>Neither approach is dishonest. They are answering different questions. A standardised extract answers "how do I guarantee an identical curcumin number in every capsule?" A full spectrum extract answers "how do I deliver the plant as it grew?"</p>
+    <p>Neither approach is dishonest. They are simply answering different questions. A standardised extract asks how to guarantee an identical curcumin figure in every capsule. A full spectrum extract asks how to deliver the plant as it grew.</p>
+    <p>We have always been more interested in the second question.</p>
 
     <h2 id="our-approach">Our approach at Three Springs Farm</h2>
-    <p>We endorse the holistic view that every one of a plant's natural components plays a role in optimising its therapeutic quality. Growing our own certified organic turmeric means we always select premium fresh rhizomes, so Complete 3 Turmeric™ contains the full spectrum of beneficial natural compounds.</p>
-    <p>By comparison, most turmeric extracts produced in Australia are standardised formulations made from dried powder or syrups. Complete 3 Turmeric™ is a full spectrum liquid extract made from fresh certified organic rhizome, with no black pepper, no curcumin concentrates and no added fats, because it does not need them.</p>
+    <p>Every bottle of Complete 3 Turmeric™ begins the same way: as fresh turmeric growing in living soil on our farm in the Northern Rivers, NSW.</p>
+    <p>Our baby turmeric is watered by overhead gravity-fed sprinklers, drawing pure spring water from one of our three natural rainforest springs. It is planted in mounds along the slopes of our hillsides, so water flows naturally through each row. Not a drop is wasted, and no powered machinery is needed.</p>
+    <p>We select premium fresh rhizomes from each harvest, and because we grow them ourselves, we know exactly what has gone into the ground and what has not. No harmful chemicals. Certified organic, ACO 1330.</p>
+    <p>Most turmeric extracts produced in Australia are standardised formulations made from dried powder or syrups. Complete 3 Turmeric™ is a full spectrum liquid extract made from the fresh whole rhizome, with no black pepper, no curcumin concentrates and no added fats, for the simple reason that it does not need them.</p>
+    <p>We are not improving on turmeric. We are protecting what nature already perfected.</p>
+    <div class="keypoint">
+      <p><strong>Just turmeric, as it has always been.</strong></p>
+    </div>
+
 
   </article>
 
@@ -315,10 +349,10 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
         <li><a href="#not-the-same">Curcumin is not turmeric</a></li>
         <li><a href="#absorption">Why curcumin is poorly absorbed</a></li>
         <li><a href="#black-pepper">What black pepper actually does</a></li>
-        <li><a href="#conjecture">Why there is conjecture about piperine</a></li>
+        <li><a href="#conjecture">Why there is conjecture over black pepper</a></li>
         <li><a href="#concentrates">What is a curcumin concentrate?</a></li>
         <li><a href="#fats">How fats and oils aid absorption</a></li>
-        <li><a href="#why-added">Why these additives exist at all</a></li>
+        <li><a href="#why-added">Why these things are added at all</a></li>
         <li><a href="#spectrum">Standardised vs full spectrum</a></li>
         <li><a href="#our-approach">Our approach</a></li>
       </ol>
@@ -369,10 +403,12 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
     <div>
       <div class="footer-title">Quick Links</div>
       <div class="footer-col">
-        <a href="../three-springs-farm-new-layout/index.html#buy">Buy Now</a>
-        <a href="../three-springs-farm-new-layout/index.html#buy">Stockists</a>
+        <a href="https://threespringsfarm.com.au/buy-now/">Buy Online</a>
+        <a href="https://threespringsfarm.com.au/buy-now/?add-to-cart=1598">Subscription</a>
+        <a href="https://threespringsfarm.com.au/stockists/">Buy In Store</a>
         <a href="../three-springs-farm-new-layout/index.html#about">About Three Springs Farm</a>
-        <a href="../three-springs-farm-new-layout/index.html#buy">Contact Us</a>
+        <a href="https://threespringsfarm.com.au/contact/">Contact Us</a>
+        <a href="https://threespringsfarm.com.au/contact/wholesale-enquiries/">Wholesale Enquiries</a>
       </div>
     </div>
     <div>

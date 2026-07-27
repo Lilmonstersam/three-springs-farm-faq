@@ -39,6 +39,15 @@ header.site{background:#FFFFFF;border-bottom:1px solid #EAE6DA;position:sticky;t
 nav.main{display:flex;align-items:center;gap:26px;font-weight:700;font-size:14px;}
 nav.main a{color:var(--ink);}
 nav.main a:hover{color:var(--green-600);}
+/* Dropdown submenus */
+nav.main .has-sub{position:relative;display:flex;align-items:center;padding-bottom:16px;margin-bottom:-16px;}
+nav.main .has-sub > a::after{content:"";display:inline-block;margin-left:7px;vertical-align:middle;border:4px solid transparent;border-top-color:currentColor;transform:translateY(2px);}
+nav.main .subnav{position:absolute;top:100%;left:0;min-width:250px;background:#FFFFFF;border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 30px rgba(31,92,45,0.14);padding:8px;display:none;flex-direction:column;gap:2px;z-index:50;}
+nav.main .subnav-right{left:auto;right:0;}
+nav.main .has-sub:hover .subnav,nav.main .has-sub:focus-within .subnav{display:flex;}
+nav.main .subnav a{display:block;font-size:13.5px;font-weight:700;color:var(--ink);padding:10px 12px;border-radius:8px;letter-spacing:0;text-transform:none;white-space:nowrap;}
+nav.main .subnav a:hover{background:var(--cream);color:var(--green-600);}
+
 nav.main a.is-current{color:var(--green-600);border-bottom:2px solid var(--gold-600);padding-bottom:2px;}
 .btn-gold{background:var(--gold-600);color:#1B2A1E;padding:10px 20px;border-radius:999px;font-weight:800;display:inline-block;}
 .btn-gold:hover{background:#D99C12;color:#1B2A1E;}
@@ -127,6 +136,8 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
   .utility-inner{flex-direction:column;text-align:center;padding:12px 16px;gap:10px;}
   .utility-group{justify-content:center;gap:16px;}
   .desktop-link{display:none;}
+  nav.main .subnav{display:none !important;}
+  nav.main .has-sub{padding-bottom:0;margin-bottom:0;}
   .nav{padding:12px 16px;}
   header.site{position:static;}
   .catnav{position:static;}
@@ -179,8 +190,21 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
       <a class="desktop-link" href="../three-springs-farm-new-layout/index.html#benefits">BENEFITS</a>
       <a class="desktop-link is-current" href="faqs.html">FAQ</a>
       <a class="desktop-link" href="../three-springs-farm-new-layout/index.html#about">ABOUT</a>
-      <a class="desktop-link" href="../three-springs-farm-new-layout/index.html#buy">STOCKISTS</a>
-      <a class="btn-gold" href="../three-springs-farm-new-layout/index.html#buy">BUY ONLINE</a>
+      <a class="desktop-link" href="https://threespringsfarm.com.au/stockists/">BUY IN STORE</a>
+      <div class="desktop-link has-sub">
+        <a href="https://threespringsfarm.com.au/contact/">CONTACT US</a>
+        <div class="subnav">
+          <a href="https://threespringsfarm.com.au/contact/">Contact Us</a>
+          <a href="https://threespringsfarm.com.au/contact/wholesale-enquiries/">Wholesale Enquiries</a>
+        </div>
+      </div>
+      <div class="has-sub">
+        <a class="btn-gold" href="https://threespringsfarm.com.au/buy-now/">BUY ONLINE</a>
+        <div class="subnav subnav-right">
+          <a href="https://threespringsfarm.com.au/buy-now/">Buy Online</a>
+          <a href="https://threespringsfarm.com.au/buy-now/?add-to-cart=1598">Subscription</a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -191,7 +215,7 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
     <div class="breadcrumb"><a href="../three-springs-farm-new-layout/index.html">Home</a> &rsaquo; <a href="../three-springs-farm-new-layout/index.html#benefits">Complete 3 Turmeric™</a> &rsaquo; FAQs</div>
     <div class="pill"><i></i> Australian Certified Organic — ACO 1330 · AUST L 286865</div>
     <h1>Complete 3 Turmeric™ Frequently Asked Questions</h1>
-    <p>Everything you might want to know about our certified organic liquid turmeric extract: how to take it, how it is made, and what makes a full spectrum extract different. Can't find your answer? <a href="#help" style="color:#F3C049;font-weight:700;">Get in touch</a>.</p>
+    <p>Everything you might want to know about our certified organic liquid turmeric extract: how to take it, how we grow and make it, and what sets a full spectrum extract apart. If your question is not here, we would love to hear from you. <a href="#help" style="color:#F3C049;font-weight:700;">Get in touch</a>.</p>
   </div>
 </section>
 
@@ -217,7 +241,7 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
       </div>
       <h2>About the Product</h2>
     </div>
-    <p class="cat-intro">What is in the bottle, how it differs from fresh turmeric and other turmeric products, and what it tastes like.</p>
+    <p class="cat-intro">What is in the bottle, how it differs from fresh turmeric and from everything else on the shelf, and what it tastes like.</p>
     <div class="acc">
 
       <details class="qa">
@@ -294,7 +318,7 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
       </div>
       <h2>Taking and Storing</h2>
     </div>
-    <p class="cat-intro">Dose, how to mix it, why liquid extracts behave differently, and how to keep your bottle in good condition.</p>
+    <p class="cat-intro">How much to take, what to mix it with, why liquid extracts behave differently, and how to look after your bottle.</p>
     <div class="acc">
 
       <details class="qa">
@@ -338,7 +362,7 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
       </div>
       <h2>Safety</h2>
     </div>
-    <p class="cat-intro">When to speak to your doctor first, and what the ethanol content means in practice.</p>
+    <p class="cat-intro">When to have a word with your doctor first, and what the ethanol content actually means in practice.</p>
     <div class="acc">
 
       <details class="qa">
@@ -374,7 +398,7 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
       </div>
       <h2>Quality and Regulation</h2>
     </div>
-    <p class="cat-intro">Where Complete 3 Turmeric™ is grown and made, what an AUST L listing actually means, and how other products compare.</p>
+    <p class="cat-intro">Where Complete 3 Turmeric™ is grown and made, what an AUST L listing really means, and how the rest of the market compares.</p>
     <div class="acc">
 
       <details class="qa">
@@ -426,7 +450,7 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
       </div>
       <h2>Turmeric vs Curcumin</h2>
     </div>
-    <p class="cat-intro">The short answers. The full explanation, covering black pepper, piperine, fats, concentrates and standardised versus full spectrum extracts, lives in our dedicated guide.</p>
+    <p class="cat-intro">The short answers here. The full story, covering black pepper, piperine, fats, concentrates and standardised versus full spectrum extracts, lives in our dedicated guide.</p>
     <div class="acc">
 
       <details class="qa">
@@ -457,7 +481,7 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
     <div class="callout">
       <div style="flex:1;min-width:260px;">
         <h3>Turmeric vs Curcumin: the complete guide</h3>
-        <p>Black pepper and piperine, why there is conjecture about using them, what a curcumin concentrate actually is, how fats and oils affect absorption, and why full spectrum extracts take a different approach.</p>
+        <p>Black pepper and piperine, why there is conjecture about using them, what a curcumin concentrate actually is, how fats and oils affect absorption, and why we have always taken a different path.</p>
         <a class="btn-outline-green" href="turmeric-vs-curcumin.html">Read the guide</a>
       </div>
     </div>
@@ -471,7 +495,7 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
       </div>
       <h2>Orders and Delivery</h2>
     </div>
-    <p class="cat-intro">Shipping times, returns and how to manage a monthly subscription.</p>
+    <p class="cat-intro">Getting your order to you, changing your mind, and managing a monthly delivery.</p>
     <div class="acc">
 
       <details class="qa draft">
@@ -507,8 +531,8 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
 <section class="help" id="help">
   <div class="help-inner">
     <div>
-      <p class="lead">Still have a question about Complete 3 Turmeric™?</p>
-      <p class="sub">Call 0415 552 055 or email info@threespringsfarm.com.au. We are a family farm, so you will be speaking with the people who grow it.</p>
+      <p class="lead">Still have a question? We would love to hear it.</p>
+      <p class="sub">Call 0415 552 055 or email info@threespringsfarm.com.au. We are a small family farm, so you will be speaking with the people who actually grow it. From our soil to your wellbeing. 🌿</p>
     </div>
     <div style="display:flex;gap:14px;flex-wrap:wrap;">
       <a class="btn-green" href="../three-springs-farm-new-layout/index.html#buy">Buy Complete 3 Turmeric™</a>
@@ -532,10 +556,12 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
     <div>
       <div class="footer-title">Quick Links</div>
       <div class="footer-col">
-        <a href="../three-springs-farm-new-layout/index.html#buy">Buy Now</a>
-        <a href="../three-springs-farm-new-layout/index.html#buy">Stockists</a>
+        <a href="https://threespringsfarm.com.au/buy-now/">Buy Online</a>
+        <a href="https://threespringsfarm.com.au/buy-now/?add-to-cart=1598">Subscription</a>
+        <a href="https://threespringsfarm.com.au/stockists/">Buy In Store</a>
         <a href="../three-springs-farm-new-layout/index.html#about">About Three Springs Farm</a>
-        <a href="../three-springs-farm-new-layout/index.html#buy">Contact Us</a>
+        <a href="https://threespringsfarm.com.au/contact/">Contact Us</a>
+        <a href="https://threespringsfarm.com.au/contact/wholesale-enquiries/">Wholesale Enquiries</a>
       </div>
     </div>
     <div>
