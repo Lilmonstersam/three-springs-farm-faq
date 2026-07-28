@@ -12,7 +12,7 @@
 :root{
   --green-900:#2C5325; --green-800:#38692F; --green-700:#4D8D41; --green-600:#4D8D41;
   --gold-500:#EEB11F; --gold-400:#EEB11F; --gold-600:#EEB11F; --gold-700:#EEB11F;
-  --cream:#FAF8F2; --ink:#26302A; --muted:#4A554C; --line:#E4DFD2; --faint:#8A948B;
+  --cream:#FFFFFF; --ink:#26302A; --muted:#4A554C; --line:#E4DFD2; --faint:#8A948B;
 }
 *{box-sizing:border-box;}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:'Nunito Sans',system-ui,sans-serif;}
@@ -46,22 +46,20 @@ nav.main .subnav{position:absolute;top:100%;left:0;min-width:250px;background:#F
 nav.main .subnav-right{left:auto;right:0;}
 nav.main .has-sub:hover .subnav,nav.main .has-sub:focus-within .subnav{display:flex;}
 nav.main .subnav a{display:block;font-size:13.5px;font-weight:700;color:var(--ink);padding:10px 12px;border-radius:8px;letter-spacing:0;text-transform:none;white-space:nowrap;}
-nav.main .subnav a:hover{background:var(--cream);color:var(--green-600);}
+nav.main .subnav a:hover{background:#F2F4F1;color:var(--green-600);}
 
 nav.main a.is-current{color:var(--green-600);border-bottom:2px solid var(--gold-600);padding-bottom:2px;}
-.btn-gold{background:var(--gold-600);color:#1B2A1E;padding:10px 20px;border-radius:999px;font-weight:800;display:inline-block;}
+.btn-gold{background:var(--gold-600);color:#1B2A1E;padding:10px 20px;border-radius:2px;font-weight:800;display:inline-block;}
 .btn-gold:hover{background:#D99C12;color:#1B2A1E;}
-.btn-outline-green{border:2px solid var(--green-600);color:var(--green-600);padding:10px 24px;border-radius:999px;font-weight:700;display:inline-block;}
+.btn-outline-green{border:2px solid var(--green-600);color:var(--green-600);padding:10px 24px;border-radius:2px;font-weight:700;display:inline-block;}
 .btn-outline-green:hover{background:var(--green-600);color:#FFFFFF;}
-.btn-outline-light{border:2px solid rgba(255,255,255,0.55);color:#FFFFFF;padding:12px 26px;border-radius:999px;font-weight:700;display:inline-block;}
+.btn-outline-light{border:2px solid rgba(255,255,255,0.55);color:#FFFFFF;padding:12px 26px;border-radius:2px;font-weight:700;display:inline-block;}
 .btn-outline-light:hover{border-color:var(--gold-400);color:var(--gold-400);}
 
 /* Hero */
 .faq-hero{background:linear-gradient(160deg,var(--green-700) 0%,var(--green-600) 70%,#4D8D41 100%);color:#FFFFFF;}
 .faq-hero-inner{max-width:1180px;margin:0 auto;padding:56px 24px 60px;text-align:center;}
-.pill{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:700;letter-spacing:0.4px;}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--gold-400);display:inline-block;}
-.faq-hero h1{font-size:42px;line-height:1.14;margin:20px 0 12px;}
+.faq-hero h1{font-size:42px;line-height:1.14;margin:14px 0 12px;}
 .faq-hero p{font-size:17px;line-height:1.65;color:#E4EFE1;max-width:62ch;margin:0 auto;}
 .breadcrumb{font-size:13px;color:#C7DCC2;margin-bottom:4px;}
 .breadcrumb a{color:#C7DCC2;}
@@ -69,9 +67,9 @@ nav.main a.is-current{color:var(--green-600);border-bottom:2px solid var(--gold-
 
 /* Category nav */
 .catnav{background:#FFFFFF;border-bottom:1px solid var(--line);position:sticky;top:73px;z-index:30;}
-.catnav-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.catnav a{font-size:13.5px;font-weight:700;color:var(--green-700);background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:8px 16px;white-space:nowrap;}
-.catnav a:hover{background:var(--green-600);border-color:var(--green-600);color:#FFFFFF;}
+.catnav-inner{max-width:1180px;margin:0 auto;padding:0 24px;display:flex;gap:34px;flex-wrap:wrap;justify-content:center;}
+.catnav a{font-size:14px;font-weight:700;color:var(--muted);background:none;border:none;padding:16px 0;white-space:nowrap;border-bottom:2px solid transparent;}
+.catnav a:hover{color:var(--green-600);border-bottom-color:var(--green-600);}
 
 /* Sections */
 .cat{padding:56px 0 8px;scroll-margin-top:140px;}
@@ -84,9 +82,9 @@ nav.main a.is-current{color:var(--green-600);border-bottom:2px solid var(--gold-
 .acc{display:flex;flex-direction:column;gap:12px;}
 details.qa{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#FFFFFF;}
 details.qa[open]{border-color:#CBDCC5;box-shadow:0 2px 10px rgba(31,92,45,0.06);}
-details.qa summary{list-style:none;cursor:pointer;padding:18px 22px;background:var(--cream);font-weight:700;font-size:15.5px;color:var(--green-700);display:flex;justify-content:space-between;align-items:center;gap:16px;}
+details.qa summary{list-style:none;cursor:pointer;padding:18px 22px;background:#F7F8F6;font-weight:700;font-size:15.5px;color:var(--green-700);display:flex;justify-content:space-between;align-items:center;gap:16px;}
 details.qa summary::-webkit-details-marker{display:none;}
-details.qa summary:hover{background:#F2EFE5;}
+details.qa summary:hover{background:#EDF1EB;}
 details.qa summary::after{content:"+";font-size:22px;line-height:1;color:var(--gold-700);flex:none;}
 details.qa[open] summary::after{content:"\2212";}
 .qa-body{padding:16px 22px 20px;font-size:15px;line-height:1.72;color:var(--muted);}
@@ -111,9 +109,9 @@ details.qa[open] summary::after{content:"\2212";}
 .help-inner{max-width:1180px;margin:0 auto;padding:40px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .help p.lead{margin:0;font-family:Quicksand,sans-serif;font-weight:700;font-size:22px;line-height:1.4;color:#3A2E08;max-width:46ch;}
 .help p.sub{margin:8px 0 0;font-size:14.5px;color:#5A4A12;}
-.btn-green{background:var(--green-700);color:#FFFFFF;font-weight:800;padding:14px 28px;border-radius:999px;display:inline-block;}
+.btn-green{background:var(--green-700);color:#FFFFFF;font-weight:800;padding:14px 28px;border-radius:2px;display:inline-block;}
 .btn-green:hover{background:var(--green-900);color:#FFFFFF;}
-.btn-outline-dark{border:2px solid #3A2E08;color:#3A2E08;font-weight:700;padding:12px 26px;border-radius:999px;display:inline-block;}
+.btn-outline-dark{border:2px solid #3A2E08;color:#3A2E08;font-weight:700;padding:12px 26px;border-radius:2px;display:inline-block;}
 .btn-outline-dark:hover{background:#3A2E08;color:var(--gold-500);}
 
 /* Disclaimer */
@@ -141,8 +139,8 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
   .nav{padding:12px 16px;}
   header.site{position:static;}
   .catnav{position:static;}
-  .catnav-inner{padding:12px 16px;gap:8px;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;}
-  .catnav a{font-size:12.5px;padding:7px 13px;}
+  .catnav-inner{padding:0 16px;gap:20px;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .catnav a{font-size:13px;padding:13px 0;}
   .faq-hero-inner{padding:36px 16px 40px;}
   .faq-hero h1{font-size:28px;line-height:1.2;}
   .faq-hero p{font-size:15.5px;}
@@ -213,7 +211,6 @@ footer.site{background:var(--green-900);color:#B9CBB0;}
 <section class="faq-hero">
   <div class="faq-hero-inner">
     <div class="breadcrumb"><a href="../three-springs-farm-new-layout/index.html">Home</a> &rsaquo; <a href="../three-springs-farm-new-layout/index.html#benefits">Complete 3 Turmeric™</a> &rsaquo; FAQs</div>
-    <div class="pill"><i></i> Australian Certified Organic — ACO 1330 · AUST L 286865</div>
     <h1>Complete 3 Turmeric™ Frequently Asked Questions</h1>
     <p>Everything you might want to know about our certified organic liquid turmeric extract: how to take it, how we grow and make it, and what sets a full spectrum extract apart. If your question is not here, we would love to hear from you. <a href="#help" style="color:#F3C049;font-weight:700;">Get in touch</a>.</p>
   </div>
